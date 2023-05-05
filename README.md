@@ -28,7 +28,6 @@ python -m venv venv
 
 ```bash
 source venv/bin/activate 
-venv\Scripts\activate 
 ```
 
 ### 5. Install dependencies
