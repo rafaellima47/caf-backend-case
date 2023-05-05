@@ -24,7 +24,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddScoped<IAnonymizationService>(sp =>
 {
     var httpClient = sp.GetRequiredService<HttpClient>();
-    var anonymizeApiUrl = "http://127.0.0.1:5000/anonymize";
+    var anonymizeApiUrl = "http://anonymization-service:5000/anonymize";
     return new AnonymizationService(httpClient, anonymizeApiUrl);
 });
 
