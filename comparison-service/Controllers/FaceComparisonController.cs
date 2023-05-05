@@ -34,20 +34,19 @@ namespace FaceComparisonAPI.Controllers
             if (identifier == Guid.Empty)
             {
                 _logger.LogWarning("Anonymize request with empty identifier");
-                return BadRequest("O identificador não foi fornecido.");
+                return BadRequest("Anonymize request with empty identifier");
             }
 
             if (image == null || image.Length == 0)
             {if (identifier == Guid.Empty)
                 _logger.LogWarning("Anonymize request with empty image");
-                return BadRequest("Nenhum arquivo enviado.");
+                return BadRequest("Anonymize request with empty image");
             }
 
             var embedding = await _anonymizationService.AnonymizeAsync(image);
             var anonymizedFace = new AnonymizedFace { Identifier = identifier, Embedding = embedding };
             await _databaseService.AddAnonymizedFaceAsync(anonymizedFace);
 
-            _logger.LogInformation("Anonymized face with identifier {Identifier} added to the database", identifier);
             return Ok(anonymizedFace);
         }
 
