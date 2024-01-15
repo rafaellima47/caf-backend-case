@@ -7,7 +7,7 @@ This project consists of two separate APIs for face comparison: the Anonymizatio
 ### Clone the project repository using the following command:
 
 ```bash
-git clone git@github.com:rafaellima47/caf-backend-case.git
+git clone git@github.com:rafaellima47/face-comparison.git
 ```
 
 ### Navigate to the project directory and start the Docker Compose project using the following command:
